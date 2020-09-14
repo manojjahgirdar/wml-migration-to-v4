@@ -3,14 +3,14 @@
 This is a migration guide for developers to migrate their existing assets from WML v3/v4 beta to WML v4.
 
 ## Table of contents:
-1. [Specifying Credentials]()
-2. [Creating a client object]()
-3. [Creating Workspaces and setting default workspace]()
-4. [Specifying metadata for the model]()
-5. [Storing a model (remains same)]()
-6. [Specifying metadata for deployment (remains same)]()
-7. [Specifying Input Payload for Prediction (remains same)]()
-8. [Get Predictions (remains same)]()
+1. [Specifying Credentials](#1-specifying-credentials)
+2. [Creating a client object](#2-creating-a-client-object)
+3. [Creating Workspaces and setting default workspace](#3-creating-workspaces-and-setting-default-workspace)
+4. [Specifying metadata for the model](#4-specifying-metadata-for-the-model)
+5. [Storing a model (remains same)](#5-storing-a-model-remains-same)
+6. [Specifying metadata for deployment (remains same)](#6-specifying-metadata-for-deployment-remains-same)
+7. [Specifying Input Payload for Prediction (remains same)](#7-specifying-input-payload-for-prediction-remains-same)
+8. [Get Predictions (remains same)](#8-get-predictions-remains-same)
 
 
 ## 1. Specifying Credentials
@@ -73,6 +73,8 @@ client = APIClient(wml_credentials)
 
 ## 3. Creating Workspaces and setting default workspace
 
+#### **NEW**: A workspace has to be created in Watson Studio / Cloud Pak for Data.
+
 - In IBM Cloud, goto **resources** and select **Watson Studio** instance, click on **Get Started** to launch Watson Studio / Cloud Pak for Data.
 
 - In Watson Studio / Cloud Pak for Data, click on the hamburger menu on the top left corner and select **Deployment spaces > View all spaces**.
@@ -95,8 +97,7 @@ client = APIClient(wml_credentials)
 
 ![](doc/source/images/copy-space-id.gif)
 
-#### **NEW**: A workspace has to be created in Watson Studio / Cloud Pak for Data. Learn more about workspaces [here](https://eu-gb.dataplatform.cloud.ibm.com/docs/content/wsj/wmls/wmls-deploy-overview.html).
-
+> Learn more about workspaces [here](https://eu-gb.dataplatform.cloud.ibm.com/docs/content/wsj/wmls/wmls-deploy-overview.html).
 
 ```python
 space_id = "<WORKSPACE_ID_FROM_WATSON_STUDIO>"
@@ -212,3 +213,11 @@ print(json.dumps(predictions, indent=2))
 ```python
 print(predictions["predictions"][0]['values'][0][0])
 ```
+
+## References
+
+- [Watson Machine Learning Migrating assets](https://eu-gb.dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/migrating-assets.html?audience=wdp).
+
+- [Watson Machine Learning Python Client Documentation](http://ibm-wml-api-pyclient.mybluemix.net/).
+
+- [Watson Machine Learning authentication](https://eu-gb.dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-authentication.html?audience=wdp)
