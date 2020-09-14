@@ -5,12 +5,12 @@ This is a migration guide for developers to migrate their existing assets from W
 ## Table of contents:
 1. [Specifying Credentials](#1-specifying-credentials)
 2. [Creating a client object](#2-creating-a-client-object)
-3. [Creating Deployment Space and setting up default deployement space for your project](#3-creating-deployment-space-and-setting-up-default-deployement-space-for-your-project)
-4. [Specifying metadata for the model](#4-specifying-metadata-for-the-model)
+3. [Creating deployment space and setting up default deployement space for your project](#3-creating-deployment-space-and-setting-up-default-deployement-space-for-your-project)
+4. [Specifying metadata for storing the model](#4-specifying-metadata-for-storing-the-model)
 5. [Storing a model (remains same)](#5-storing-a-model-remains-same)
 6. [Specifying metadata for deployment (remains same)](#6-specifying-metadata-for-deployment-remains-same)
-7. [Specifying Input Payload for Prediction (remains same)](#7-specifying-input-payload-for-prediction-remains-same)
-8. [Get Predictions (remains same)](#8-get-predictions-remains-same)
+7. [Specifying input payload for prediction (remains same)](#7-specifying-input-payload-for-prediction-remains-same)
+8. [Getting predictions (remains same)](#8-getting-predictions-remains-same)
 
 
 ## 1. Specifying Credentials
@@ -71,9 +71,9 @@ from ibm_watson_machine_learning import APIClient
 client = APIClient(wml_credentials)
 ```
 
-## 3. Creating Deployment Space and setting up default deployement space for your project
+## 3. Creating deployment space and setting up default deployement space for your project
 
-#### **NEW**: A Deployment Space has to be created in Watson Studio / Cloud Pak for Data.
+#### **NEW**: A deployment space has to be created in Watson Studio / Cloud Pak for Data.
 
 - In IBM Cloud, goto **resources** and select **Watson Studio** instance, click on **Get Started** to launch Watson Studio / Cloud Pak for Data.
 
@@ -81,11 +81,11 @@ client = APIClient(wml_credentials)
 
 ![](doc/source/images/select-deployment-spaces.gif)
 
-- In Deployment spaces, click on **New deployment space +**.
+- In deployment spaces, click on **New deployment space +**.
 
 - Select **Create an empty space** when prompted.
 
-- Make sure you select the appropriate **Cloud Object Storage service** as well as **Machine Learning service**.
+- Make sure you select the appropriate **Cloud object storage service** as well as **Machine learning service**.
 
 ![](doc/source/images/deployment-space.png)
 
@@ -115,7 +115,7 @@ client.spaces.list(limit=10)
 client.set.default_space(space_id)
 ```
 
-## 4. Specifying metadata for the model
+## 4. Specifying metadata for storing the model
 
 #### **OLD**: `RUNTIME_UID` was being used to specify the runtime of a model in v3 / v4 beta.
 
@@ -161,7 +161,7 @@ model_details = client.repository.get_details(published_model_uid)
 print(json.dumps(model_details, indent=2))
 ```
 
-## 6. Specifying metadata for deployment (remains same)
+## 6. Specifying metadata for deploying a model (remains same)
 
 
 ```python
@@ -181,7 +181,7 @@ created_deployment = client.deployments.create(published_model_uid, meta_props=d
 deployments = client.deployments.get_details()
 ```
 
-## 7. Specifying Input Payload for Prediction (remains same)
+## 7. Specifying input payload for prediction (remains same)
 
 
 ```python
@@ -192,7 +192,7 @@ client.deployments.ScoringMetaNames.INPUT_DATA: [{
 }
 ```
 
-## 8. Get Predictions (remains same)
+## 8. Getting predictions (remains same)
 
 
 ```python
