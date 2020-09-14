@@ -3,7 +3,7 @@
 This is a migration guide for developers to migrate their existing assets from WML v3/v4 beta to WML v4.
 
 ## Table of contents:
-1. [Specifying Credentials](#1-specifying-credentials)
+1. [Specifying credentials](#1-specifying-credentials)
 2. [Creating a client object](#2-creating-a-client-object)
 3. [Creating deployment space and setting up default deployement space for your project](#3-creating-deployment-space-and-setting-up-default-deployement-space-for-your-project)
 4. [Specifying metadata for storing the model](#4-specifying-metadata-for-storing-the-model)
@@ -13,7 +13,7 @@ This is a migration guide for developers to migrate their existing assets from W
 8. [Getting predictions (remains same)](#8-getting-predictions-remains-same)
 
 
-## 1. Specifying Credentials
+## 1. Specifying credentials
 
 #### **OLD**: Credentials were generated from `IBM Cloud > Resources > WML Instance > Service Credentials`
 
