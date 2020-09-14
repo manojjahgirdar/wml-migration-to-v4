@@ -26,7 +26,7 @@ wml_credentials = {
 }
 ```
 
-#### **NEW**: Apikey has to be generated from `IBM Cloud > Resources > WML Instance > Manage > Access (IAM) > Apikey`
+#### **NEW**: Apikey has to be generated from `IBM Cloud > Resources > WML Instance > Manage > Access (IAM) > API keys > Create an IBM Cloud API key`
 >NOTE: 
 1. `instance_id` is no longer required.
 2. `url` will change based on the region where the WML Instance is deployed in your IBM Cloud, Example:
