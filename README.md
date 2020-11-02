@@ -144,6 +144,12 @@ metadata = {
 }
 ```
 
+Optionally, to get a list of software specifications run the following:
+
+```python
+client.software_specifications.list()
+```
+
 ## 5. Storing a model (remains same)
 
 
