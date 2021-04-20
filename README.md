@@ -132,14 +132,14 @@ metadata = {
 
 
 ```python
-sofware_spec_uid = client.software_specifications.get_id_by_name("scikit-learn_0.20-py3.6")
+sofware_spec_uid = client.software_specifications.get_id_by_name("default_py3.7")
 ```
 
 
 ```python
 metadata = {
     client.repository.ModelMetaNames.NAME: 'Personal Loan Prediction model',
-    client.repository.ModelMetaNames.TYPE: 'scikit-learn_0.20',
+    client.repository.ModelMetaNames.TYPE: 'scikit-learn_0.23',
     client.repository.ModelMetaNames.SOFTWARE_SPEC_UID: sofware_spec_uid
 }
 ```
